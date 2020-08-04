@@ -12,6 +12,15 @@
 3. $ django-admin startproject config .
 4. [Add JWT-Authentication to Django](#add-jwt)
 
+### Create React Js App
+1. Install create-react-app system-wide
+2. $ npm install -g create-react-app
+3. Create React app with name 'frontweb', eject the config files so that we can edit them and run test it
+4. $ create-react-app frontweb
+5. $ cd frontweb
+6. <del>$ npm run eject</del>
+7. $ npm run start
+
 ## <a name="add-jwt"></a>Add JWT-Authentication to Django
 ```
 pip install djangorestframework
@@ -66,15 +75,3 @@ urlpatterns = [
 ```
 
 > At this point you should be able to get a token by sending this request: `curl -X POST -d "username=*****&password=*****" http://localhost:8000/api-token-auth/`
-
-<h3> Create React App </h3>
-<p>  - Install create-react-app system-wide</p>
-<p>     $ npm install -g create-react-app</p>
-<p>  - Create React app with name 'frontweb', eject the config files so that we can edit them and run test it</p>
-<p>     $ create-react-app frontweb</p>
-<p>     $ cd frontweb</p>
-<p>   <del>$ npm run eject</del></p>
-<p>     $ npm run start</p>
-
-    - Created backend folder at project root to house all django apps, templates
-    - Added path of backend/templates in TEMPLATES in config.settings
