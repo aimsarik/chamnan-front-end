@@ -39,7 +39,15 @@ DATABASES = {
     }
 }
 ```
+ We need to create a user, and before do that, we need to apply our migrations. Run the following:
 
+```bash
+python manage.py migrate
+```
+Once that’s done, the easiest way to create a new user is with:
+```bash
+python manage.py createsuperuser
+```
 ## <a name="add-jwt"></a>Add JWT-Authentication to Django
 
 ```py
