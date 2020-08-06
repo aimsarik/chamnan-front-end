@@ -59,6 +59,12 @@ INSTALLED_APPS = [
     'corsheaders',
     'core.apps.CoreConfig',
 ]
+MIDDLEWARE = [
+    # ...
+    'corsheaders.middleware.CorsMiddleware', # Note that this needs to be placed above CommonMiddleware
+    'django.middleware.common.CommonMiddleware', # This should already exist
+    # ...
+]
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
@@ -84,15 +90,10 @@ Now that Rest Framework is configured, we need to add a few URLs:
 
 [...]
 from rest_framework_jwt.views import obtain_jwt_token
-from rest_framework_jwt.views import refresh_jwt_token
-from rest_framework_jwt.views import verify_jwt_token
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-token-auth/', obtain_jwt_token),
-    path('api-token-refresh/', refresh_jwt_token),
-    path('api-token-verify/', verify_jwt_token),
-    path('core/', include('core.urls'))
 ]
 ```
 
