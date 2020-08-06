@@ -22,14 +22,8 @@
 6. <del>$ npm run eject</del>
 7. $ npm run start
 
-## <a name="add-jwt"></a>Add JWT-Authentication to Django
-```
-pip install djangorestframework
-pip install djangorestframework-jwt
-pip install django-cors-headers
+## <a name="database"></a>Database configuration
 
-```
-## <a name="database"></a>Add JWT-Authentication to Django
 ```py
 # File: ./Chamnan/config/settings.py**
 DATABASES = {
@@ -37,14 +31,16 @@ DATABASES = {
         # 'ENGINE': 'django.db.backends.sqlite3',
         # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'pgdb',
+        'NAME': 'your-db',
         'USER': 'postgres',
-        'PASSWORD': 'Pg@8992',
+        'PASSWORD': 'your-password',
         'HOST': 'localhost',
-        'PORT': '5433',
+        'PORT': 'your-port',
     }
 }
 ```
+
+## <a name="add-jwt"></a>Add JWT-Authentication to Django
 
 ```py
 # File: ./Chamnan/config/settings.py**
