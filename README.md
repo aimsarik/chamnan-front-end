@@ -10,7 +10,8 @@
 1. Set up Virtual Environment and install Django with other dependencies and libraries later
 2. Create django project with name 'config'
 3. $ django-admin startproject config .
-4. [Add JWT-Authentication to Django](#add-jwt)
+4. [Database configuration](#database)
+5. [Add JWT-Authentication to Django](#add-jwt)
 
 ### Create React Js App
 1. Install create-react-app system-wide
@@ -28,6 +29,23 @@ pip install djangorestframework-jwt
 pip install django-cors-headers
 
 ```
+## <a name="database"></a>Add JWT-Authentication to Django
+```py
+# File: ./Chamnan/config/settings.py**
+DATABASES = {
+    'default': {
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'pgdb',
+        'USER': 'postgres',
+        'PASSWORD': 'Pg@8992',
+        'HOST': 'localhost',
+        'PORT': '5433',
+    }
+}
+```
+
 ```py
 # File: ./Chamnan/config/settings.py**
 
